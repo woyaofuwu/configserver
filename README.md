@@ -2,6 +2,8 @@
 
 
 
+oc new-build --name=tasks --image-stream=wildfly:latest --binary=true
+
 oc new-build --name=pipeline-configserver https://github.com/woyaofuwu/configserver.git --strategy=pipeline  -n cicd-andrew
 
 
