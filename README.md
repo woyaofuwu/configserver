@@ -1,12 +1,17 @@
 # Build with openshift and Run 
 
+
+
 oc new-build  --strategy=pipeline --cicd-andrew
 
-oc new-build --binary=true --name="configserver" --image-stream=openshift/java:8
 
-oc new-app configserver
+ oc new-app rabbitmq:3.8.5 -n dev-andrew
 
-oc start-build configserver
+oc new-build --binary=true --name="configserver" --image-stream=openshift/java:8 -n dev-andrew
+
+oc new-app configserver  -n dev-andrew
+
+oc start-build configserver  -n dev-andrew
 
 # Config Server Sample
 
