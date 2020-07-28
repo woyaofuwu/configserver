@@ -2,10 +2,11 @@
 
 
 
-oc new-build --name=tasks --image-stream=wildfly:latest --binary=true
+#oc new-build --name=tasks --image-stream=wildfly:latest --binary=true
 
 oc new-build --name=pipeline-configserver https://github.com/woyaofuwu/configserver.git --strategy=pipeline  -n cicd-andrew
-
+# 以上目录用于创建一个jenkins pipleline,对应Jenkinsfile在github上相应woyaofuwu/configserver项目下。
+# 后续动作包括，进入jenkins进行job运行，已发布程序
 
  oc new-app rabbitmq:3.8.5 -n dev-andrew
 

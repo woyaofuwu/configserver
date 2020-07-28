@@ -78,7 +78,7 @@ stage('Build and Tag OpenShift Image') {
                script {
              openshift.withCluster() {
                openshift.withProject("dev-andrew") {
-                 openshift.selector("bc", "hellotest").startBuild("--from-file=./target/configserver-0.0.1-SNAPSHOT.jar", "--wait=true")
+                 openshift.selector("bc", "configserver").startBuild("--from-file=./target/configserver-0.0.1-SNAPSHOT.jar", "--wait=true")
        
                  //openshift.tag("hellotest:latest", "hellotest:v12")
                }
