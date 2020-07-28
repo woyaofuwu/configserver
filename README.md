@@ -1,4 +1,7 @@
 # Build with openshift and Run 
+
+oc new-build  --strategy=pipeline --cicd-andrew
+
 oc new-build --binary=true --name="configserver" --image-stream=openshift/java:8
 
 oc new-app configserver
