@@ -2,7 +2,7 @@
 
 
 
-oc new-build  --strategy=pipeline --cicd-andrew
+oc new-build --name=pipeline-configserver https://github.com/woyaofuwu/configserver.git --strategy=pipeline  -n cicd-andrew
 
 
  oc new-app rabbitmq:3.8.5 -n dev-andrew
